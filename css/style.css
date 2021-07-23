@@ -1,361 +1,50 @@
 body {
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
-  background-color: #14131a;
-  padding-bottom: 5%;
+    margin: 0; /*у body есть отступы по умолчанию*/
+    font-family: 'Open Sans', sans-serif; /*san-serif - запасной*/
+    font-size: 14px;
+    color: #323232;
+    -webkit-font-smoothing: antialiased;
+    background-color:#f5f5f5;
 }
 
-img {
-  max-width: 100%;
-}
-.container {
-  width: 90%;
-  margin: auto;
+*,
+*:before, /* не берет во внимание before и after - пишем отдельно*/
+*:after {
+    box-sizing: border-box; /*размер блока = размер + padding + граница*/
 }
 
-
-.venom {
-  position: absolute;
-  top: 0;
-  right: 0;
-  max-width: 728px;
-  width: 40%;
+h1, h2, h3, h4, h5, h6 { 
+    margin: 0; /*убираем отступы сверху и снизу для всех заголовков*/
 }
 
-header {
-  display: flex;
-  align-items: center;
-  padding-top: 40px;
-  margin-bottom: 80px;
- }
-
-.logo-link {
-  display: inline-block;
-  margin-right: 50px;
-}
-
-.nav-menu {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  
-}
-
-.nav-menu-item {
-  margin-right: 30px;
-}
-
-.nav-menu-link {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.5)
-}
-
-.film-date {
-  display: block;
-  font-size: 24px;
-  line-height: 28px;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 2%;
-  }
-
-.film-description {
-  margin-top: 3%;
-  max-width: 423px;
-  font-size: 16px;
-  line-height: 140%;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.film-logo {
-  width: 70%;
-}
-
-.button {
-  padding: 15px 30px;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  cursor: pointer;
-
-}
-
-.button-text, .button-icon {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.button-text {
-  font-size: 14px;
-  line-height: 16px;
-  margin-left: 10px;
-
-}
-
-.button-primary {
-  color: #8D0019;
-  background-color: #fff;
-  
-}
-
-.button-link {
-  color: #fff;
-}
-
-.button-group {
-  margin-top: 5%;
+p {
+    margin: 0 0 10px; /*отступ только снизу*/
 }
 
 
-.blood {
-  background: url('../img/blood.png') no-repeat top right / 70%, #14131a url('../img/background.jpg')  no-repeat center center / 100%;
+.add_input_fields input {
+  margin: 5px 0;
+  padding: 5px 5px;
 }
 
-.primary-bg {
-  background: #14131a url('../img/background.jpg') no-repeat center center / 100%;
+.add_input_fields input:focus{
+  outline: none;
 }
 
-.content {
-  display: flex;
+.remove_field{            /*this CSS for jQery class*/
+  border: 1px solid #333;
+  padding: 2px 5px;
+  color:#333;
+  border-radius: 2px;
+  background: #efefef;
+}
+.remove_field i{
+  color: #656363;
+}
+.add_field select, .add_field input {
+  margin-right: 4px;
 }
 
-.col {
- flex-basis: 50%;
-}
-
-.content-title {
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 42px;
-  color: rgba(255, 255, 255, 0.8);
+.add_input_fields_button {
   margin-bottom: 20px;
-}
-
-.content-text {
-  font-size: 16px;
-  line-height: 140%;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 423px;
-  margin-bottom: 30px;
-}
-
-.content-subtitle {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 140%;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 15px;
-  margin-top: 0;
-}
-
-.content .list {
-  list-style: none;
-  padding: 0;
-}
-
-.list-item {
-  line-height: 1.5;
-}
-
-.column-2 {
- -webkit-column-count: 2;
- -moz-column-count: 2;
- column-count: 2;
- -webkit-column-gap: 20px;
- -moz-column-gap: 20px;
- column-gap: 20px;
- max-width: 350px;
-}
-
-.content .trailer {
-  width: 356px;
-  height: 205px;
-  background: url("../img/trailer-cover.jpg") no-repeat center / contain;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 33px;
-}
-
-.trailer .play {
-  height: 45px;
-  width: 45px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-}
-
-.trailer .play-icon {
-  transform: translate(15px, 15px);
-}
-
-.trailer a {
-  background-color: #fff;
-}
-
-.poster-wrapper {
-  display: flex;
-  align-items: start;
-
-}
-
-.poster {
-  width: 362px;
-  border-radius: 5px;
-  margin-right: 30px;
-}
-
-.poster-wrapper .content-subtitle {
-  margin-bottom: 5px;
-}
-
-.poster-wrapper .list {
-  margin: 0;
-  margin-bottom: 20px;
-}
-
-.menu-button,
-.menu-close {
-  display: none;
-}
-
-@media (max-width: 1024px) {
-  .content {
-    flex-direction: column;
-    padding-bottom: 5%;
-  }
-
-  .col {
-    margin-bottom: 5%;
-  }
-
-  .header {
-    margin-bottom: 4%;
-  }
-  
-  .film {
-    margin-top: 20%;
-  }
-}
-
-@media (max-width: 768px) {
-  .blood {
-    background: #14131a;
-  }
-
-  .venom {
-    top: 14%;
-  }
-}
-
-@media (max-width: 576px) {
-  .nav-menu  {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    z-index: 9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    transform: translateX(100%);
-    transition: transform 0.2s;
-    
-  }
-
-  .nav-menu-item {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    margin-right: 0;
-  }
-
-  .nav-menu-link {
-    color: #14131a;
-  }
-
-  .venom {
-    top: 14%;
-  }
-
-  .menu-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border: none;
-    background-color: #14131a;
-    cursor: pointer;
-    color: #fff;
-  }
-
-  .menu-close {
-    position: fixed;
-    right: 25px;
-    top: 65px;
-    display: flex;
-    opacity: 0;
-    align-items: center;
-    z-index: 10;
-    border: none;
-    background-color: #fff;
-    cursor: pointer;
-    transform: translateX(300%);
-    transition: transform 0.2s;
-    transition-delay: 0.4s;
-  }
-    
-  .menu-close-text {
-    margin-right: 10px;
-   }
-    
-  .is-active {
-      transform: translateX(0%);
-      opacity: 1;
-      /*transition: transform 0.2s;*/
-  }
-
-  
-  .menu-button-text {
-    margin-right: 10px;
-  }
-
-  .nav {
-    margin-left: auto;
-  }
-
-  .button-group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .film-text {
-    text-align: center;
-  }
-
-  .poster-wrapper {
-    flex-direction: column;
-  }
-
-  .poster {
-    margin-bottom: 4%;
-    margin-right: 0;
-    width: 100%;
-    max-width: 350px;
-  }
-
-  .content .trailer {
-    max-width: 350px;
-    width: 100%;
-  }
-
-  .column-2 {
-    column-count: 1;
-  }
-
 }
